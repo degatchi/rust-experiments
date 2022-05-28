@@ -2,6 +2,7 @@
 
 ## Resources
 - [TheDevMethod: Rust YT tutorials](https://www.youtube.com/c/TheDevMethod)
+- [Introduction to Rust - Part 15: Futures](https://www.youtube.com/watch?v=eQkFrww3udQ)
 
 
 ## Notes
