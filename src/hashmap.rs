@@ -1,8 +1,10 @@
-use std::collections::HashMap;
+#[allow(unused_imports)]
+use std::collections::{BTreeMap, BTreeSet, HashMap, HashSet};
 
 #[allow(dead_code)]
 
 pub fn hashmap_a() {
+    // let mut pairs = BTreeMap::new();
     let mut pairs = HashMap::new();
 
     // Store initial key-value pair.
@@ -11,8 +13,15 @@ pub fn hashmap_a() {
     // Replace key's value.
     pairs.insert(("a", "a"), (2, 2));
 
-    // Get value from key.
+    // Index key directly.
+    // If no value at key, it panics.
+    let coords = ("a", "a");
+    let _pair = pairs[&coords];
+
+    // Another way of indexing directly.
     let pair_a = pairs[&("a", "a")];
+
+    // Get value from key, except it doesn't panic - returns Option.
     let pair_b = pairs.get(&("a", "a"));
     let pair_c = pairs.get(&("a", "b"));
 
@@ -20,9 +29,15 @@ pub fn hashmap_a() {
     println!("pair_b: {:?}", pair_b);
     println!("pair_c: {:?}", pair_c);
 
-    // If key exists, don't replace value.
-    // Otherwise, create new key-value pair.
+    // If key exists, replace value.
+    // Otherwise, insert new key-value pair.
     pairs.entry(("a", "a")).or_insert((2, 2));
+    // Another way of replacing.
+    *pairs.entry(("a", "a")).or_insert((2, 2)) = (1, 1);
+
+    // Searches for key and removes if it's found. 
+    pairs.insert(("b", "b"), (1, 1));
+    pairs.remove(&("b", "b"));
 
     // Iterating over HashMap.
     for (key, value) in &pairs {
@@ -30,7 +45,7 @@ pub fn hashmap_a() {
         if pairs.contains_key(&("a", "a")) {
             println!("key: {:?} : value: {:?}", key, value);
         }
-    }
+    } 
 
     // Iteration over hashmap and checking val.
     match pairs.get(&("a", "a")) {
@@ -38,5 +53,18 @@ pub fn hashmap_a() {
             println!("Val found: {:?}", val);
         },
         None => {},
+    }
+
+}
+
+pub fn hashset() {
+    let mut primes = HashSet::new();
+
+    primes.insert(2);
+    primes.insert(3);
+    primes.insert(5);
+    
+    for prime in &primes {
+        println!("Prime: {}", prime);
     }
 }
