@@ -89,4 +89,19 @@ pub fn map_in_map() {
         }
      */
     println!("Pairs: {:?}", pairs);
+
+    // Update inner mapping
+    if let Some(group) = pairs.get(&("a", "b")) {
+        // len() == 3
+        println!("Group len: {:?}", group.len());
+
+        /*
+            pair 0: ("1", (100, 160))
+            pair 1: ("0", (100, 150))
+            pair 2: ("2", (100, 170))
+        */
+        for (index, pair) in group.iter().enumerate() {
+            println!("pair {}: {:?}", index, pair)
+        }
+    }
 }
