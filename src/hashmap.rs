@@ -70,12 +70,12 @@ pub fn hashset() {
 }
 
 pub fn map_in_map() {
-    let mut pairs: HashMap<(&str, &str), HashMap<&str, (i32, i32)>> = HashMap::new(); 
-    let mut reserves: HashMap<&str, (i32, i32)> = HashMap::new();
+    let mut pairs: HashMap<(&str, &str), HashMap<i32, (i32, i32)>> = HashMap::new(); 
+    let mut reserves: HashMap<i32, (i32, i32)> = HashMap::new();
 
-    reserves.insert("0", (100, 150));
-    reserves.insert("1", (100, 160));
-    reserves.insert("2", (100, 170));
+    reserves.insert(0, (100, 150));
+    reserves.insert(1, (100, 160));
+    reserves.insert(2, (100, 170));
 
     pairs.insert(("a", "b"), reserves); 
 
@@ -95,13 +95,24 @@ pub fn map_in_map() {
         // len() == 3
         println!("Group len: {:?}", group.len());
 
+        
         /*
-            pair 0: ("1", (100, 160))
-            pair 1: ("0", (100, 150))
-            pair 2: ("2", (100, 170))
+        pair 0: ("1", (100, 160))
+        pair 1: ("0", (100, 150))
+        pair 2: ("2", (100, 170))
         */
         for (index, pair) in group.iter().enumerate() {
-            println!("pair {}: {:?}", index, pair)
+            println!("pair {}: {:?}", index, pair);
         }
     }
+    
+
+    // Updating hashmap value located within hashmap.
+    let val = pairs[&("a", "b")][&0];
+    println!("val before: {:?}", val);
+    if let Some(changing) = pairs.get_mut(&("a", "b")) {
+        changing.insert(0, (110, 140));
+        println!("val after: {:?}", pairs[&("a", "b")][&0])
+    }
+    
 }
