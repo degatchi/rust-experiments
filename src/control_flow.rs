@@ -24,34 +24,22 @@ pub fn lifetime_loop() {
 
 pub fn for_loops() {
     // Loop ends on 9th iteration.
-    for _i in 0..10 {
-        // println!("loop 1: {}", i);
-    }
+    for _i in 0..10 {}
     
     // Loop includes 10th iteration.
-    for _i in 0..=10 {
-        // println!("loop 2: {}", i);
-    }
+    for _i in 0..=10 {}
 
     let some: Vec<Something> = vec![];
 
     // Iterates over the vector elements.
-    for _something in some.iter() {
-        // println!("Something: {:?}", something)
-    }
+    for _something in some.iter() {}
 
     // Iterates over the vector of elements while keeping track of the counter.
-    for _something in some.iter().enumerate() {
-        // println!("Something: {:?}", something)
-    }
+    for _something in some.iter().enumerate() {}
 
     // Iterates over the vector of elements while keeping track of the counter.
-    for (_index, _something) in some.iter().enumerate() {
-        // println!("Something: {:?}", something)
-    }
+    for (_index, _something) in some.iter().enumerate() {}
 
     // Reverses the order of iteration.
-    for _something in some.iter().rev() {
-        // println!("Something: {:?}", something)
-    }
+    for _something in some.iter().rev() {}
 }
