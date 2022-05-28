@@ -1,5 +1,7 @@
 use std::collections::HashMap;
 
+#[allow(dead_code)]
+
 pub fn hashmap_a() {
     let mut pairs = HashMap::new();
 

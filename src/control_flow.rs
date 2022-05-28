@@ -1,3 +1,5 @@
+#[allow(dead_code)]
+
 #[derive(Debug)]
 pub struct Something {
     pub a: String,
@@ -40,6 +42,11 @@ pub fn for_loops() {
 
     // Iterates over the vector of elements while keeping track of the counter.
     for _something in some.iter().enumerate() {
+        // println!("Something: {:?}", something)
+    }
+
+    // Iterates over the vector of elements while keeping track of the counter.
+    for (_index, _something) in some.iter().enumerate() {
         // println!("Something: {:?}", something)
     }
 
