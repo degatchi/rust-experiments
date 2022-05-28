@@ -68,3 +68,25 @@ pub fn hashset() {
         println!("Prime: {}", prime);
     }
 }
+
+pub fn map_in_map() {
+    let mut pairs: HashMap<(&str, &str), HashMap<&str, (i32, i32)>> = HashMap::new(); 
+    let mut reserves: HashMap<&str, (i32, i32)> = HashMap::new();
+
+    reserves.insert("0", (100, 150));
+    reserves.insert("1", (100, 160));
+    reserves.insert("2", (100, 170));
+
+    pairs.insert(("a", "b"), reserves); 
+
+    /*
+        Pairs: {
+            ("a", "b"): {
+                "2": (100, 170), 
+                "0": (100, 150), 
+                "1": (100, 160)
+            }
+        }
+     */
+    println!("Pairs: {:?}", pairs);
+}
