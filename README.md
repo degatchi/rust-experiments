@@ -3,6 +3,8 @@
 ## Resources
 - [TheDevMethod: Rust YT tutorials](https://www.youtube.com/c/TheDevMethod)
 - [Introduction to Rust - Part 15: Futures](https://www.youtube.com/watch?v=eQkFrww3udQ)
+- [How to use Mutex and Atomically Reference Counted Arc with threads in Rust to share information betw](https://www.youtube.com/watch?v=blL8MBmX4YI)
+- [How to do concurrency with channels in Rust](https://www.youtube.com/watch?v=FAbvNXLXKf0)
 
 
 ## Notes
