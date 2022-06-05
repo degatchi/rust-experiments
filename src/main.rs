@@ -1,5 +1,7 @@
 use rust_experiments::mutex::*;
+use rust_experiments::channels::*;
 
 fn main() {
-    mutex_one();
+    // mutex_one();
+    channels();
 }
