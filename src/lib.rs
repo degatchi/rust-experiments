@@ -4,3 +4,4 @@ pub mod vectors;
 pub mod slices;
 pub mod multi_threading;
 pub mod generics_and_traits;
+pub mod mutex;

@@ -97,22 +97,23 @@ pub fn map_in_map() {
 
         
         /*
-        pair 0: ("1", (100, 160))
-        pair 1: ("0", (100, 150))
-        pair 2: ("2", (100, 170))
+            pair 0: ("1", (100, 160))
+            pair 1: ("0", (100, 150))
+            pair 2: ("2", (100, 170))
         */
         for (index, pair) in group.iter().enumerate() {
             println!("pair {}: {:?}", index, pair);
         }
     }
-    
 
     // Updating hashmap value located within hashmap.
     let val = pairs[&("a", "b")][&0];
     println!("val before: {:?}", val);
     if let Some(changing) = pairs.get_mut(&("a", "b")) {
         changing.insert(0, (110, 140));
-        println!("val after: {:?}", pairs[&("a", "b")][&0])
+        println!("val after: {:?}", pairs[&("a", "b")][&0]);
+        println!("new pairs: {:?}", pairs.get(&("a", "b")));
     }
+
     
 }
